@@ -15,7 +15,6 @@ final class DateFormatting{
     func getOnlyDate(date: Date) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, yyyy"
-        dateFormatter.timeZone = TimeZone.current
         return dateFormatter.string(from: date)
     }
     func getOnlyHour(date: Date) -> String{
