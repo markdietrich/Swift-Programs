@@ -9,6 +9,7 @@ final class DateFormatting{
     init(){
         dateFormatter.amSymbol = "am"
         dateFormatter.pmSymbol = "pm"
+        dateFormatter.timeZone = TimeZone.current
     }
     
     func getOnlyDate(date: Date) -> String{
@@ -19,17 +20,14 @@ final class DateFormatting{
     }
     func getOnlyHour(date: Date) -> String{
         dateFormatter.dateFormat = "h:mm a"
-        dateFormatter.timeZone = TimeZone.current
         return dateFormatter.string(from: date)
     }
     func getDayDate(date: Date) -> String{
         dateFormatter.dateFormat = "EEEE h:mm a"
-        dateFormatter.timeZone = TimeZone.current
         return dateFormatter.string(from: date)
     }
     func getFullDate(date: Date) -> String{
         dateFormatter.dateFormat = "MMM d, yyyy h:mm a"
-        dateFormatter.timeZone = TimeZone.current
         return dateFormatter.string(from: date)
     }
 
